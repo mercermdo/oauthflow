@@ -1,0 +1,17 @@
+doctype html
+html
+  head
+    title HubSpot Contacts
+  body
+    h1 HubSpot OAuth Flow
+
+    if token
+      h2 Access Token
+      p= token
+
+      h2 Contacts
+      ul
+        each contact in contacts
+          li= contact.properties.firstname + " " + contact.properties.lastname
+    else
+      a(href=authUrl) Connect to HubSpot
